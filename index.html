@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="UCP.js">
+    <link rel="stylesheet" href="UCP.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand">A Day In My Life 🦄ﾞ </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://www.youtube.com/@HYBELABELS">streaming <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.youtube.com/@BTS">bangtan tv</a>
+                </li>
+            </ul>
+    </nav>
+
+    </div>
+    <div class="time" style="float: right;">
+        <p style="text-align: center;"><span id="currentDate"></span></p>
+        <p style="text-align: center;"><span id="currentTime"></span></p>
+    </div>
+
+    <div class="container">
+        <h2>Welcome ARMY !</h2>
+        <h3 style="text-align: center;"><span id="greeting"></span></h3>
+        <p>This page made love for ARMY's diary.</p>
+
+    </div>
+
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="image/LGO.jpg" class="center-image">
+            </div>
+            <div class="carousel-item">
+                <img src="image/Bts.jpg" class="center-image">
+            </div>
+            <div class="carousel-item">
+                <img src="image/Bangtan.png" class="center-image">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#demo" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <div class="card-deck">
+        <div class="card">
+            <img src="image/BeyondTheScene.jpeg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Diaries 📖</h5>
+                <p class="card-text"><small class="text-center">Sometimes people wrote diaries because its fun !</small>
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <a href="https://weverse.io/bts/feed">
+                <img src="image/BeyondTheScene.jpeg" class="card-img-top"></a>
+            <div class="card-body">
+                <h5 class="card-title">How's Your Day 🌞</h5>
+                <p class="card-text"><small class="text-muted">You can click the picture to spent time with
+                        Bangtan</small></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/BeyondTheScene.jpeg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">🌅 Sunrise Walk</h5>
+                <p class="card-text"><small class="text-center"> Sometimes, You should walk 2-3 times a week around the
+                        1.3 km pond 2-4 times to maintiain an ideal body shape.</small></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <p>Copyright &copy; Adinda Nurhayati Adriansyah</p>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            var currentDateElement = document.getElementById("currentDate");
+            var currentTimeElement = document.getElementById("currentTime");
+
+            var currentDate = new Date();
+            var dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            currentDateElement.innerText = currentDate.toLocaleDateString('en-US', dateOptions);
+
+            var currentTime = currentDate.toLocaleTimeString('en-US');
+            currentTimeElement.innerText = currentTime;
+
+            var currentHour = currentDate.getHours();
+            var greeting;
+
+            if (currentHour < 12) {
+                greeting = "Good morning!";
+            } else if (currentHour < 18) {
+                greeting = "Good afternoon!";
+            } else {
+                greeting = "Good evening!";
+            }
+
+            greetingElement.innerText = greeting;
+        }
+        setInterval(updateDateTime, 1000); 
+    </script>
+</body>
+
+</html>
